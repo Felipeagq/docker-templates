@@ -1,0 +1,14 @@
+````yml
+version: '3'
+services:
+  app:
+    image: 1dev/server
+    container_name: 1dev
+    restart: unless-stopped
+    ports:
+      - 83:6610
+      - 6611:6611
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/data/opt:/opt/onedev
+````
