@@ -24,24 +24,23 @@ yum install curl
 ````
 Luego tienes que asignar permisos de ejecución al Docker Compose binario:
 ````
-chmod +x /usr/local/bin/docker-compose
-
+sudo chmod +x /usr/local/bin/docker-compose
 ````
 
 Y ahora, para garantizar que no haya problemas al usar la herramienta en el terminal, tendrás que hacer un enlace simbólico al sistema:
 ````
-ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ````
 
 Finalmente, verifica la versión instalada:
 ````
-docker-compose --version
+sudo docker-compose --version
 ````
 
 ### instalar docker compose de UNA
 ````
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-docker-compose --version
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo docker-compose --version
 ````
