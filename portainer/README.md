@@ -29,3 +29,19 @@ services:
     #     failure_action: rollback
 
 ````
+
+---
+````yml
+version: "3.3"
+
+
+services:
+
+  portainer:
+    image: portainer/portainer-ce:2.6.0
+    ports:
+      - 88:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./data/portainer:/data
+````
