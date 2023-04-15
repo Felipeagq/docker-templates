@@ -10,6 +10,7 @@ sudo yum install docker
 sudo service docker start
 sudo systemctl enable docker
 sudo service docker status
+sudo usermod -aG docker $USER
 ````
 
 
