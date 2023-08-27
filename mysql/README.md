@@ -53,8 +53,6 @@ version: '3.8'
 services:
   db:
     image: mysql:8.0
-    cap_add:
-      - SYS_NICE
     restart: always
     environment:
       - MYSQL_DATABASE=quotes
@@ -63,5 +61,4 @@ services:
       - '3306:3306'
     volumes:
       - db:/var/lib/mysql
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
 ```
