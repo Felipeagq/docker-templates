@@ -62,3 +62,8 @@ services:
     volumes:
       - db:/var/lib/mysql
 ```
+
+## Recuperar un backUp en Docker
+- docker exec my_msql /usr/bin/mysql -u root --password=test_pass -e 'CREATE DATABASE testdb;'
+- docker exec -i my_mysql /usr/bin/mysql -u root --password=test_pass testdb < dump_on_host.sql
+- docker exec -it my_mysql /usr/bin/mysql -u root --password=test_pass testdb mysql> SHOW TABLES;
