@@ -1,3 +1,4 @@
+## Correr contenedor
 ```yml
 version: '3.3'
 services:
@@ -11,4 +12,20 @@ services:
       - /docker/mosquitto/config:/mqtt/config
       - /docker/mosquitto/log: /mqtt/log
       - /docker/mosquitto/data/:/mqtt/data
+```
+
+## Crear contraseña
+```
+cd /mosquitto/config
+mosquitto_passwd -c passwd [user]
+```
+
+## modificar el mosquitto.conf
+```
+password_file /mosquitto/config/passwd
+```
+
+## reiniciar docker container
+```
+sudo docker restart mosquitto
 ```
