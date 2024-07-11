@@ -77,3 +77,11 @@ sudo docker-compose --version
         parallelism: 1
         failure_action: rollback
 ````
+
+### volumen en docker swarm
+````
+    volumes:
+      - type: bind
+        source: /home/ubuntu/apps/feanware/data
+        target: /var/lib/postgresql/data
+````
