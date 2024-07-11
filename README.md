@@ -85,3 +85,9 @@ sudo docker-compose --version
         source: /home/ubuntu/apps/feanware/data
         target: /var/lib/postgresql/data
 ````
+
+### .bashrc
+````
+alias stackup='docker stack deploy --with-registry-auth -c docker-compose.yml'
+alias ecrlogin="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 721308948482.dkr.ecr.us-east-1.amazonaws.com"
+````
