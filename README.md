@@ -45,3 +45,35 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo docker-compose --version
 ````
+
+### seccion deploy de docker swarm en manager
+````
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == manager
+      update_config:
+        order: start-first
+        delay: 1m
+        parallelism: 1
+        failure_action: rollback
+````
+
+### seccion deploy de docker swarm en worker
+````
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == worker
+          - node.hostname == ip-172-31-80-9
+      update_config:
+        delay: 1m
+        parallelism: 1
+        failure_action: rollback
+````
