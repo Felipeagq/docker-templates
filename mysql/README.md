@@ -45,7 +45,7 @@ services:
       - "3306:3306"
     volumes:
       - type: bind
-        source: /home/ubuntu/apps/feanware/data
+        source: ./data
         target: /var/lib/mysql
     deploy:
       replicas: 1
