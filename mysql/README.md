@@ -53,8 +53,8 @@ services:
         condition: on-failure
       placement:
         constraints:
-          - node.role == worker
-          - node.hostname == ip-172-31-80-32
+          - node.role == master
+          - node.hostname == 
       update_config:
         delay: 1m
         parallelism: 1
