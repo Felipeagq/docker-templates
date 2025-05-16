@@ -46,7 +46,7 @@ services:
     volumes:
       - type: bind
         source: /home/ubuntu/apps/feanware/data
-        target: /var/lib/postgresql/data
+        target: /var/lib/mysql
     deploy:
       replicas: 1
       restart_policy:
