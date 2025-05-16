@@ -43,6 +43,22 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3306:3306"
+    volumes:
+      - type: bind
+        source: /home/ubuntu/apps/feanware/data
+        target: /var/lib/postgresql/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == worker
+          - node.hostname == ip-172-31-80-32
+      update_config:
+        delay: 1m
+        parallelism: 1
+        failure_action: rollback
 ```
 
 
